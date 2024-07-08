@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:note_mate/core/theming/color.dart';
+import 'package:flutter_note_mate/core/theming/color.dart';
 
 import 'font_weight_helper.dart';
 

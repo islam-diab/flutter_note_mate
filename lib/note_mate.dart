@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_note_mate/features/auth/login/ui/login_view.dart';
 
 class NoteMate extends StatelessWidget {
   const NoteMate({super.key});
@@ -9,7 +10,7 @@ class NoteMate extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: null,
+      home: const LoginView(),
     );
   }
 }
