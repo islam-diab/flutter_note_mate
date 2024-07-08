@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "83304309672",
+    "project_id": "note-mate-07",
+    "storage_bucket": "note-mate-07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83304309672:android:41d469e6dde2b99b43f39d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_note_mate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXsolmajIryoPG6fHvMXejjZhl2LV3NEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
