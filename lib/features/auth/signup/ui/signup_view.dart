@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_note_mate/core/helpre/assests.dart';
-import 'package:flutter_note_mate/features/auth/login/ui/widget/container_info.dart';
+import 'package:flutter_note_mate/features/auth/signup/ui/widget/container_info_signup.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+class SignupView extends StatelessWidget {
+  const SignupView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +14,8 @@ class LoginView extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height,
           child: Column(
             children: [
-              SizedBox(
-                height: 230,
-                child: Image.asset(AppAssests.loginAvatar),
-              ),
-              const ContainerInfo(),
+              Image.asset(AppAssests.loginAvatar),
+              const ContainerInfoForSignup(),
             ],
           ),
         ),

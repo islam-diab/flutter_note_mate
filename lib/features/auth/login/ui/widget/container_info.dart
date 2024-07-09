@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_note_mate/core/helpre/extensions.dart';
 import 'package:flutter_note_mate/core/helpre/spase.dart';
+import 'package:flutter_note_mate/core/routing/routes.dart';
 import 'package:flutter_note_mate/core/widget/auth/container_with_opacity.dart';
 import 'package:flutter_note_mate/core/widget/auth/logo_of_another_signup.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,7 +31,9 @@ class ContainerInfo extends StatelessWidget {
           LogoOfAnotherSignUp(
             title: 'Don\'t have an account ? ',
             text: 'Sing Up',
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(Routes.signUpScreen);
+            },
           ),
         ],
       ),
