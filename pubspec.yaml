@@ -20,6 +20,8 @@ dependencies:
   firebase_core: ^2.32.0
 
   flutter_screenutil: ^5.9.3
+  # Pin code input (OTP) text field
+  pinput: ^5.0.0
 
 dev_dependencies:
   flutter_test:
