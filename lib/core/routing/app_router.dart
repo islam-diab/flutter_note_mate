@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_note_mate/core/routing/routes.dart';
+import 'package:flutter_note_mate/features/auth/forgot_password/ui/screen/forgot_password.dart';
 import 'package:flutter_note_mate/features/auth/login/ui/login_view.dart';
 import 'package:flutter_note_mate/features/auth/signup/ui/signup_view.dart';
 import 'package:flutter_note_mate/features/home/ui/home_view.dart';
@@ -17,6 +18,10 @@ class AppRouter {
       case Routes.signUpScreen:
         return MaterialPageRoute(
           builder: (_) => const SignupView(),
+        );
+      case Routes.forgotPassword:
+        return MaterialPageRoute(
+          builder: (_) => const ForgotPassword(),
         );
       case Routes.homeScreen:
         return MaterialPageRoute(

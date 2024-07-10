@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_note_mate/core/helpre/extensions.dart';
+import 'package:flutter_note_mate/core/routing/routes.dart';
 import 'package:flutter_note_mate/core/widget/auth/app_text_bottom.dart';
 import 'package:flutter_note_mate/core/widget/auth/text_form_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_note_mate/core/helpre/spase.dart';
 import 'package:flutter_note_mate/core/theming/text_styles.dart';
-
 
 class UserAndPassword extends StatelessWidget {
   const UserAndPassword({super.key});
@@ -51,9 +52,14 @@ class UserAndPassword extends StatelessWidget {
         verticalSpace(10.h),
         Align(
           alignment: Alignment.centerRight,
-          child: Text(
-            'Forgot Password !',
-            style: AppTextStyles.font14Medium,
+          child: TextButton(
+            onPressed: () {
+              context.pushNamed(Routes.forgotPassword);
+            },
+            child: Text(
+              'Forgot Password !',
+              style: AppTextStyles.font14Medium,
+            ),
           ),
         ),
         verticalSpace(20.h),
