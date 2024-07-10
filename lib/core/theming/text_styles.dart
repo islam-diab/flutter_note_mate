@@ -41,7 +41,6 @@ class AppTextStyles {
     fontSize: 18.sp,
     color: Colors.white,
     fontWeight: FontWeightHelper.regular,
-    
   );
 
   static TextStyle font14Medium = TextStyle(
@@ -60,11 +59,5 @@ class AppTextStyles {
     fontSize: 18.sp,
     color: Colors.white,
     fontWeight: FontWeightHelper.medium,
-  );
-
-  static TextStyle font16Regular = TextStyle(
-    fontSize: 16.sp,
-    color: AppColor.rhythm,
-    fontWeight: FontWeightHelper.regular,
   );
 }
