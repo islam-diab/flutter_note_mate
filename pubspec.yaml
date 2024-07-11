@@ -23,6 +23,8 @@ dependencies:
   # Pin code input (OTP) text field
   pinput: ^5.0.0
 
+  flutter_svg: ^2.0.10+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -47,6 +49,7 @@ flutter:
     - assets/splash/splash.png
     - assets/splash/splash_dark.png
     - assets/auth/image/
+    - assets/image/home/
  
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -60,10 +63,14 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/font/Nunito-Regular.ttf
+        - asset: assets/font/Nunito-Bold.ttf
+          weight: 700
+        - asset: assets/font/Nunito-Italic.ttf
+          style: italic
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

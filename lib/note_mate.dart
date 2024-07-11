@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_note_mate/core/routing/app_router.dart';
 import 'package:flutter_note_mate/core/routing/routes.dart';
-import 'package:flutter_note_mate/features/auth/login/ui/login_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NoteMate extends StatelessWidget {
@@ -10,14 +9,14 @@ class NoteMate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(414, 896),
       child: MaterialApp(
         theme: ThemeData(
+          fontFamily: 'Nunito',
           useMaterial3: true,
         ),
-           onGenerateRoute: appRouter.generateRoute,
-           initialRoute: Routes.loginScreen,
-        home: const LoginView(),
+        onGenerateRoute: appRouter.generateRoute,
+        initialRoute: Routes.homeScreen,
       ),
     );
   }
