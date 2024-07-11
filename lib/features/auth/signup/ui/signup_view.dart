@@ -14,7 +14,7 @@ class SignupView extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height,
           child: Column(
             children: [
-              Image.asset(AppAssests.loginAvatar),
+              Image.asset(AppAssests.signupAvatar),
               const ContainerInfoForSignup(),
             ],
           ),

@@ -9,9 +9,10 @@ class NoteMate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(414, 896),
       child: MaterialApp(
         theme: ThemeData(
+          fontFamily: 'Nunito',
           useMaterial3: true,
         ),
         onGenerateRoute: appRouter.generateRoute,
