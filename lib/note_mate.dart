@@ -16,7 +16,7 @@ class NoteMate extends StatelessWidget {
           useMaterial3: true,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.homeScreen,
+        initialRoute: Routes.loginScreen,
       ),
     );
   }
