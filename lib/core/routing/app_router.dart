@@ -6,6 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_note_mate/core/routing/routes.dart';
 import 'package:flutter_note_mate/features/auth/forgot_password/ui/screen/forgot_password.dart';
 import 'package:flutter_note_mate/features/auth/forgot_password/ui/screen/otp_verification.dart';
+import 'package:flutter_note_mate/features/auth/login/data/api/login_api.dart';
+import 'package:flutter_note_mate/features/auth/login/data/repository/login_repository.dart';
 import 'package:flutter_note_mate/features/auth/login/logic/login_cubit.dart';
 import 'package:flutter_note_mate/features/auth/login/ui/login_view.dart';
 import 'package:flutter_note_mate/features/auth/signup/data/api/signup_api.dart';
@@ -21,7 +23,9 @@ class AppRouter {
       case Routes.loginScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => LoginCubit(),
+            create: (context) => LoginCubit(
+              LoginRepository(loginApi: LoginApi()),
+            ),
             child: const LoginView(),
           ),
         );

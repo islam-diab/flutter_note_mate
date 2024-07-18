@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_note_mate/core/helpre/extensions.dart';
 import 'package:flutter_note_mate/core/routing/routes.dart';
 import 'package:flutter_note_mate/core/widget/auth/app_text_bottom.dart';
 import 'package:flutter_note_mate/core/widget/auth/text_form_field.dart';
+import 'package:flutter_note_mate/features/auth/login/logic/login_cubit.dart';
+import 'package:flutter_note_mate/features/auth/login/ui/widget/login_listener.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_note_mate/core/helpre/spase.dart';
 import 'package:flutter_note_mate/core/theming/text_styles.dart';
@@ -22,7 +25,7 @@ class UserAndPassword extends StatelessWidget {
             }
             return null;
           },
-          controller: TextEditingController(),
+          controller: context.read<LoginCubit>().emailController,
           hintText: 'Email Address',
           keyboardType: TextInputType.emailAddress,
           textInputAction: TextInputAction.next,
@@ -36,7 +39,7 @@ class UserAndPassword extends StatelessWidget {
             }
             return null;
           },
-          controller: TextEditingController(),
+          controller: context.read<LoginCubit>().passwordController,
           isObscureText: false,
           hintText: 'password',
           keyboardType: TextInputType.visiblePassword,
@@ -65,8 +68,11 @@ class UserAndPassword extends StatelessWidget {
         verticalSpace(20.h),
         AppTextBottom(
           text: 'Login',
-          onTap: () {},
+          onTap: () {
+            context.read<LoginCubit>().login();
+          },
         ),
+        const LoginListener(),
       ],
     );
   }
