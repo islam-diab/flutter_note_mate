@@ -25,7 +25,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => LoginCubit(
-              LoginRepository(loginApi: LoginApi()),
+              LoginRepository(
+                loginApi: LoginApi(),
+                cloudFirestoreApi: CloudFirestoreApi(),
+              ),
             ),
             child: const LoginView(),
           ),

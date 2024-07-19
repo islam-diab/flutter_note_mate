@@ -19,6 +19,7 @@ class SignupListener extends StatelessWidget {
           loading: () {
             showDialog(
               context: context,
+              barrierDismissible: false, // Prevent dismissal on outside tap
               builder: (context) => const Center(
                 child: CircularProgressIndicator(
                   color: AppColor.primaryColor,
@@ -27,11 +28,9 @@ class SignupListener extends StatelessWidget {
             );
           },
           succes: () {
-            // context.pop();
-            // context.pop();
-            context.pushNamedAndRemoveUntil(
-              Routes.homeScreen,
-              predicate: (route) => false,
+            context.pop();
+            context.pushReplacementNamed(
+              Routes.loginScreen,
             );
           },
           error: (error) {

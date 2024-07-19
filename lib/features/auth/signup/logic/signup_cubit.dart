@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,6 +27,7 @@ class SignupCubit extends Cubit<SignupState> {
         email: emailController.text,
         password: passwordController.text,
       );
+       await FirebaseAuth.instance.signOut();
       emit(const SignupState.succes());
       return ResultApi(value: result, isError: false);
     } catch (e) {
