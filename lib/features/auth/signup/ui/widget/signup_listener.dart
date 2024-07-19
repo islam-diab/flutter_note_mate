@@ -27,8 +27,12 @@ class SignupListener extends StatelessWidget {
             );
           },
           succes: () {
-            context.pop();
-            context.pushNamed(Routes.homeScreen);
+            // context.pop();
+            // context.pop();
+            context.pushNamedAndRemoveUntil(
+              Routes.homeScreen,
+              predicate: (route) => false,
+            );
           },
           error: (error) {
             context.pop();
