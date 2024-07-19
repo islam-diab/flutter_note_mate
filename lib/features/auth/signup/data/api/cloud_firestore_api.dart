@@ -17,4 +17,15 @@ class CloudFirestoreApi {
       throw e.toString();
     }
   }
+
+  Future<ResultApi> getUserData(String documentId) async {
+    try {
+      var doc =
+          _firestore.collection(AppConstant.usersCollection).doc(documentId);
+      var data = await doc.get();
+      return ResultApi(isError: false, value: data.data());
+    } catch (e) {
+      throw e.toString();
+    }
+  } 
 }

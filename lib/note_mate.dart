@@ -44,7 +44,7 @@ Future<String> _checkIfUserIsLoggedIn() async {
   User? user = auth.currentUser;
   if (user != null) {
     // User is signed in
-    return Routes.signUpScreen;
+    return Routes.homeScreen;
   } else {
     // No user is signed in
     return Routes.loginScreen;
