@@ -10,6 +10,7 @@ import 'package:flutter_note_mate/features/auth/login/data/api/login_api.dart';
 import 'package:flutter_note_mate/features/auth/login/data/repository/login_repository.dart';
 import 'package:flutter_note_mate/features/auth/login/logic/login_cubit.dart';
 import 'package:flutter_note_mate/features/auth/login/ui/login_view.dart';
+import 'package:flutter_note_mate/features/auth/signup/data/api/cloud_firestore_api.dart';
 import 'package:flutter_note_mate/features/auth/signup/data/api/signup_api.dart';
 import 'package:flutter_note_mate/features/auth/signup/logic/signup_cubit.dart';
 import 'package:flutter_note_mate/features/auth/signup/data/repo/signup_repo.dart';
@@ -33,7 +34,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => SignupCubit(
-              SignupRepo(signupApi: SignupApi()),
+              SignupRepo(CloudFirestoreApi(), signupApi: SignupApi()),
             ),
             child: const SignupView(),
           ),

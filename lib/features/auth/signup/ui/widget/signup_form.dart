@@ -19,7 +19,7 @@ class SignupForm extends StatelessWidget {
       child: Column(
         children: [
           AppTextFormField(
-            controller: TextEditingController(),
+            controller: context.read<SignupCubit>().nameController,
             hintText: 'username',
             keyboardType: TextInputType.name,
             prefixIcon: const Icon(Icons.person_outline),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_note_mate/core/model/api_result.dart';
@@ -8,13 +9,12 @@ part 'signup_state.dart';
 part 'signup_cubit.freezed.dart';
 
 class SignupCubit extends Cubit<SignupState> {
-  SignupCubit(
-    this.signupRepo,
-  ) : super(const SignupState.initial());
-
   final SignupRepo signupRepo;
 
+  SignupCubit(this.signupRepo) : super(const SignupState.initial());
+
   final formKey = GlobalKey<FormState>();
+  TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -22,10 +22,10 @@ class SignupCubit extends Cubit<SignupState> {
     emit(const SignupState.loading());
     try {
       ResultApi result = await signupRepo.signup(
+        name: nameController.text,
         email: emailController.text,
         password: passwordController.text,
       );
-
       emit(const SignupState.succes());
       return ResultApi(value: result, isError: false);
     } catch (e) {

@@ -21,8 +21,7 @@ class SignupApi {
       } catch (e) {
         return ResultApi(isError: true, value: e.toString());
       }
-    }
-    else {
+    } else {
       return ResultApi(isError: true, value: 'No internet connection');
     }
   }

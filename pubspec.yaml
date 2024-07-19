@@ -18,6 +18,8 @@ dependencies:
   flutter_native_splash: ^2.4.1
 
   firebase_core: ^2.32.0
+  firebase_auth: ^4.20.0
+  cloud_firestore: ^4.17.5
 
   flutter_screenutil: ^5.9.3
   # Pin code input (OTP) text field
@@ -27,9 +29,11 @@ dependencies:
   flutter_bloc: ^8.1.6
   freezed: ^2.5.2
   freezed_annotation: ^2.4.3
+  json_serializable: ^6.8.0
+  json_annotation: ^4.9.0
   build_runner: ^2.4.7
 
-  firebase_auth: ^4.20.0
+  
 
   hive: ^2.2.3
   hive_flutter: ^1.1.0
