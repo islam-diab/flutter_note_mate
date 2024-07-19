@@ -7,14 +7,17 @@ class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
     required this.title,
-    this.onPressed,
     required this.suffixIcon,
+    required this.onPressedInSuffixIcon,
     required this.perfixIcon,
+    required this.onPressedInPerfixIcon,
   });
   final IconData suffixIcon;
+  final void Function()? onPressedInSuffixIcon;
   final IconData perfixIcon;
+  final void Function()? onPressedInPerfixIcon;
   final String title;
-  final void Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +25,7 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         children: [
           CustomIcon(
-            onPressed: onPressed,
+            onPressed: onPressedInPerfixIcon,
             icon: perfixIcon,
           ),
           horizontalSpace(18),
@@ -32,7 +35,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           const Expanded(child: SizedBox.shrink()),
           CustomIcon(
-            onPressed: onPressed,
+            onPressed: onPressedInSuffixIcon,
             icon: suffixIcon,
           ),
         ],
