@@ -42,7 +42,8 @@ class LoginListener extends StatelessWidget {
                 ),
                 content: Text(
                   error,
-                  style: AppTextStyles.fondt18RegularWhite,
+                  style: AppTextStyles.fondt18RegularWhite
+                      .copyWith(color: Colors.red),
                 ),
                 actions: [
                   TextButton(
