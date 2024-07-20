@@ -1,21 +1,35 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:hive/hive.dart';
 
 part 'app_user.g.dart';
 
-@JsonSerializable()
-class AppUser {
+@HiveType(typeId: 0)
+class AppUser extends HiveObject {
+  @HiveField(0)
   final String uid;
+  
+  @HiveField(1)
   final String email;
+
+  @HiveField(2)
   final String name;
 
-  AppUser({
-    required this.uid,
-    required this.email,
-    required this.name,
-  });
+  AppUser({required this.uid, required this.email, required this.name});
 
-  factory AppUser.fromJson(Map<String, dynamic> json) =>
-      _$AppUserFromJson(json);
+  // from json
+  factory AppUser.fromJson(Map<String, dynamic> json) {
+    return AppUser(
+      uid: json['uid'],
+      email: json['email'],
+      name: json['name'],
+    );
+  }
 
-  Map<String, dynamic> toJson() => _$AppUserToJson(this);
+  //to json
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['uid'] = uid;
+    data['email'] = email;
+    data['name'] = name;
+    return data;
+  }
 }
