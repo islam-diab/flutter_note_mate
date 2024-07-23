@@ -11,7 +11,7 @@ class AppTextFormField extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final bool isObscureText;
-  final TextInputType keyboardType;
+  final TextInputType? keyboardType;
   final TextInputAction textInputAction;
   final Function(String?) validator;
   final TextEditingController controller;
@@ -28,7 +28,7 @@ class AppTextFormField extends StatelessWidget {
     this.readOnly = false,
     this.onTap,
     this.width,
-    required this.keyboardType,
+     this.keyboardType,
     required this.textInputAction,
     this.maxLine = 1,
   });

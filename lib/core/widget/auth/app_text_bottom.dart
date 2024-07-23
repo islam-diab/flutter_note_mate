@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_note_mate/core/theming/text_styles.dart';
 
 class AppTextBottom extends StatelessWidget {
-  const AppTextBottom({super.key, required this.onTap, required this.text});
+  const AppTextBottom({
+    super.key,
+    required this.onTap,
+    required this.text,
+    this.isLoading = false,
+  });
   final void Function()? onTap;
   final String text;
-
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -24,10 +29,19 @@ class AppTextBottom extends StatelessWidget {
           ),
         ),
         child: Center(
-            child: Text(
-          text,
-          style: AppTextStyles.font18MediumWhite,
-        )),
+          child: isLoading
+              ? const SizedBox(
+                  height: 24,
+                  width: 24,
+                  child: CircularProgressIndicator(
+                    color: Colors.white,
+                  ),
+                )
+              : Text(
+                  text,
+                  style: AppTextStyles.font18MediumWhite,
+                ),
+        ),
       ),
     );
   }
