@@ -5,7 +5,7 @@ import 'package:flutter_note_mate/core/theming/text_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
   final Function()? onTap;
-  final String hintText;
+  final String? hintText;
   final int? maxLine;
   final bool readOnly;
   final Widget? prefixIcon;
@@ -19,7 +19,7 @@ class AppTextFormField extends StatelessWidget {
 
   const AppTextFormField({
     super.key,
-    required this.hintText,
+    this.hintText,
     this.prefixIcon,
     this.suffixIcon,
     this.isObscureText = false,
@@ -28,7 +28,7 @@ class AppTextFormField extends StatelessWidget {
     this.readOnly = false,
     this.onTap,
     this.width,
-     this.keyboardType,
+    this.keyboardType,
     required this.textInputAction,
     this.maxLine = 1,
   });
@@ -50,7 +50,7 @@ class AppTextFormField extends StatelessWidget {
             keyboardType: keyboardType,
             obscureText: isObscureText,
             textInputAction: textInputAction,
-            style: AppTextStyles.font14Medium,
+            style: AppTextStyles.font18MediumWhite,
             decoration: InputDecoration(
               fillColor: Colors.grey.withOpacity(0.1),
               filled: true,
@@ -65,7 +65,7 @@ class AppTextFormField extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Colors.white,
+                  color: Colors.green,
                   width: 1.3.w,
                 ),
                 borderRadius: BorderRadius.circular(16.0),

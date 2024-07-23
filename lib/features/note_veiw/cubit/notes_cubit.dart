@@ -38,7 +38,21 @@ class NotesCubit extends Cubit<NotesState> {
       note.color = color.value;
       var noteBox = Hive.box<NoteModel>(HiveConstant.noteBox);
       await noteBox.add(note);
-      fetchAllNotes();
+      titleController.clear();
+      contentController.clear();
+
+      emit(AddNoteSuccess());
+    } catch (e) {
+      emit(NotesError(error: e.toString()));
+    }
+  }
+
+  editNote(NoteModel note) async {
+    emit(NotesLoading());
+    try {
+      note.title = titleController.text;
+      note.content = contentController.text;
+       note.save();
       emit(AddNoteSuccess());
     } catch (e) {
       emit(NotesError(error: e.toString()));
