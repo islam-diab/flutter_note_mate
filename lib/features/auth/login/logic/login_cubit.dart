@@ -23,15 +23,13 @@ class LoginCubit extends Cubit<LoginState> {
         passwordController.text.trim(),
       );
 
-      // Map<String, dynamic> result = resultApi.value;
-
       AppUser appUser = AppUser.fromJson(resultApi.value);
 
       // Save user information to Hive
-      var userBox = Hive.box<AppUser>(AppConstant.userBox);
+      var userBox = Hive.box<AppUser>(HiveConstant.userBox);
 
       // Save with a specific key
-      await userBox.put(AppConstant.currentUser, appUser);
+      await userBox.put(HiveConstant.currentUser, appUser);
 
       emit(const LoginState.succes());
       return ResultApi(value: resultApi, isError: false);

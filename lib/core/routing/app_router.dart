@@ -15,8 +15,7 @@ import 'package:flutter_note_mate/features/auth/signup/data/api/signup_api.dart'
 import 'package:flutter_note_mate/features/auth/signup/logic/signup_cubit.dart';
 import 'package:flutter_note_mate/features/auth/signup/data/repo/signup_repo.dart';
 import 'package:flutter_note_mate/features/auth/signup/ui/signup_view.dart';
-import 'package:flutter_note_mate/features/home/logic/home_cubit.dart';
-import 'package:flutter_note_mate/features/home/ui/home_view.dart';
+import 'package:flutter_note_mate/features/note_veiw/view/notes_view.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -52,10 +51,7 @@ class AppRouter {
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => HomeCubit(),
-            child: const HomeView(),
-          ),
+          builder: (_) => const NotesView(),
         );
       default:
         return null;

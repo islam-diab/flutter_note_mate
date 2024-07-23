@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_note_mate/core/helpre/spase.dart';
 import 'package:flutter_note_mate/core/theming/text_styles.dart';
-import 'package:flutter_note_mate/features/home/ui/widget/custom_icon.dart';
+import 'package:flutter_note_mate/features/note_veiw/view/widget/note_view/custom_icon.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
