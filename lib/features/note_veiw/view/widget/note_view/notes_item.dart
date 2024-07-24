@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_note_mate/core/helpre/extensions.dart';
+import 'package:flutter_note_mate/core/theming/app_color.dart';
+import 'package:flutter_note_mate/core/theming/text_styles.dart';
 import 'package:flutter_note_mate/features/note_veiw/cubit/notes_cubit.dart';
 import 'package:flutter_note_mate/features/note_veiw/models/note_model.dart';
 import 'package:flutter_note_mate/features/note_veiw/view/widget/edit_note/edit_note.dart';
+part 'app_text_button_to_dialog.dart';
 
 class NotesItem extends StatelessWidget {
   const NotesItem({super.key, required this.notes});
@@ -52,8 +56,7 @@ class NotesItem extends StatelessWidget {
                 ),
                 trailing: IconButton(
                   onPressed: () {
-                    notes.delete();
-                    context.read<NotesCubit>().fetchAllNotes();
+                    deleteDialog(context, notes);
                   },
                   icon: const Icon(
                     Icons.delete,
@@ -77,6 +80,53 @@ class NotesItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  static void deleteDialog(BuildContext context, NoteModel notes) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            backgroundColor: AppColor.primaryColor,
+            title: const Center(
+              child: Icon(
+                Icons.error,
+                color: AppColor.grey,
+                size: 30,
+              ),
+            ),
+            content: Text(
+              'Are you sure you want to delete this note?',
+              style: AppTextStyles.font25RegularWhite,
+              textAlign: TextAlign.center,
+            ),
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  AppTextButtonToDialog(
+                    onPressed: () {
+                      notes.delete();
+                      context.pop();
+                      context.read<NotesCubit>().fetchAllNotes();
+                    },
+                    notes: notes,
+                    text: 'Delete',
+                    color: Colors.red,
+                  ),
+                  AppTextButtonToDialog(
+                    onPressed: () {
+                      context.pop();
+                    },
+                    notes: notes,
+                    text: 'Keep',
+                    color: Colors.green,
+                  ),
+                ],
+              )
+            ],
+          );
+        });
   }
 }
 

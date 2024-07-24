@@ -39,7 +39,7 @@ class AddNoteForm extends StatelessWidget {
               if (value?.isEmpty ?? true) {
                 return 'Title must not be empty';
               }
-              return null;
+              return '';
             },
             maxLine: 1,
             textInputAction: TextInputAction.next,
@@ -49,7 +49,7 @@ class AddNoteForm extends StatelessWidget {
             controller: context.read<NotesCubit>().contentController,
             hintText: 'Content',
             validator: (value) {
-              null;
+              return '';
             },
             maxLine: 7,
             textInputAction: TextInputAction.newline,

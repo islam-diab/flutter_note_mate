@@ -23,7 +23,7 @@ class UserAndPassword extends StatelessWidget {
             if (value!.isEmpty) {
               return 'Email must not be empty';
             }
-            return null;
+            return '';
           },
           controller: context.read<LoginCubit>().emailController,
           hintText: 'Email Address',
@@ -37,7 +37,7 @@ class UserAndPassword extends StatelessWidget {
             if (value!.isEmpty) {
               return 'Password must not be empty';
             }
-            return null;
+            return '';
           },
           controller: context.read<LoginCubit>().passwordController,
           isObscureText: false,
