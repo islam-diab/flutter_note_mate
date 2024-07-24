@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_note_mate/core/helpre/extensions.dart';
 import 'package:flutter_note_mate/core/helpre/spase.dart';
+import 'package:flutter_note_mate/core/theming/text_styles.dart';
 import 'package:flutter_note_mate/core/widget/auth/text_form_field.dart';
 import 'package:flutter_note_mate/features/note_veiw/cubit/notes_cubit.dart';
 import 'package:flutter_note_mate/features/note_veiw/models/note_model.dart';
@@ -19,6 +20,7 @@ class EditNoteViewBody extends StatelessWidget {
       padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
       child: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomAppBar(
               onPressedInPerfixIcon: () {
@@ -34,16 +36,17 @@ class EditNoteViewBody extends StatelessWidget {
             ),
             verticalSpace(50),
             AppTextFormField(
-              validator: (t) {},
+              
               controller: context.read<NotesCubit>().titleController,
-              textInputAction: TextInputAction.next,
+              textInputAction: TextInputAction.newline,
             ),
             verticalSpace(20),
-            AppTextFormField(
-              validator: (t) {},
+            TextField(
               controller: context.read<NotesCubit>().contentController,
+              style: AppTextStyles.font35RegularWhite,
               textInputAction: TextInputAction.newline,
-              maxLine: 30,
+              maxLines: 25,
+              decoration: const InputDecoration(),
             ),
             verticalSpace(50),
           ],

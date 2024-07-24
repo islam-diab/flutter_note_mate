@@ -28,7 +28,7 @@ class SignupForm extends StatelessWidget {
               if (value!.isEmpty) {
                 return 'username must not be empty';
               }
-              return null;
+              return '';
             },
           ),
           verticalSpace(15.h),
@@ -44,6 +44,7 @@ class SignupForm extends StatelessWidget {
                   !AppRegex.isEmailValid(value)) {
                 return 'Please enter a valid email';
               }
+              return '';
             },
           ),
           verticalSpace(15.h),
@@ -60,7 +61,7 @@ class SignupForm extends StatelessWidget {
                   !AppRegex.isPasswordValid(value)) {
                 return 'password must not be empty';
               }
-              return null;
+              return '';
             },
           ),
           // verticalSpace(15.h),

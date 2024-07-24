@@ -13,7 +13,7 @@ class AppTextFormField extends StatelessWidget {
   final bool isObscureText;
   final TextInputType? keyboardType;
   final TextInputAction textInputAction;
-  final Function(String?) validator;
+  final String Function(String?)? validator;
   final TextEditingController controller;
   final double? width;
 
@@ -23,7 +23,7 @@ class AppTextFormField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.isObscureText = false,
-    required this.validator,
+     this.validator,
     required this.controller,
     this.readOnly = false,
     this.onTap,
@@ -43,9 +43,7 @@ class AppTextFormField extends StatelessWidget {
             onTap: onTap,
             maxLines: maxLine,
             readOnly: readOnly,
-            validator: (value) {
-              return validator(value);
-            },
+            validator: validator,
             controller: controller,
             keyboardType: keyboardType,
             obscureText: isObscureText,
