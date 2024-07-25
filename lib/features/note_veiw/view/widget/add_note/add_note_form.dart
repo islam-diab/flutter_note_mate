@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_note_mate/core/helpre/spase.dart';
 import 'package:flutter_note_mate/core/widget/auth/app_text_bottom.dart';
 import 'package:flutter_note_mate/core/widget/auth/text_form_field.dart';
-import 'package:flutter_note_mate/features/note_veiw/cubit/notes_cubit.dart';
+import 'package:flutter_note_mate/features/note_veiw/logic/notes_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'color_list_view.dart';
@@ -39,7 +39,7 @@ class AddNoteForm extends StatelessWidget {
               if (value?.isEmpty ?? true) {
                 return 'Title must not be empty';
               }
-              return '';
+              return null;
             },
             maxLine: 1,
             textInputAction: TextInputAction.next,
@@ -49,7 +49,7 @@ class AddNoteForm extends StatelessWidget {
             controller: context.read<NotesCubit>().contentController,
             hintText: 'Content',
             validator: (value) {
-              return '';
+              return null;
             },
             maxLine: 7,
             textInputAction: TextInputAction.newline,

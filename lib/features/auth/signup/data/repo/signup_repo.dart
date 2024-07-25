@@ -1,3 +1,4 @@
+import 'package:flutter_note_mate/core/helpre/app_constant.dart';
 import 'package:flutter_note_mate/core/helpre/is_connected_network.dart';
 import 'package:flutter_note_mate/core/model/api_result.dart';
 import 'package:flutter_note_mate/core/model/app_user.dart';
@@ -18,7 +19,8 @@ class SignupRepo {
         ResultApi result =
             await signupApi.signUp(email: email, password: password);
         AppUser appUser = AppUser(uid: result.value, email: email, name: name);
-        await cloudFirestoreApi.setUserData(
+        await cloudFirestoreApi.setDataInFirestore(
+          collectionName: FirebaseConstant.usersCollection,
           documentId: result.value,
           data: appUser.toJson(),
         );

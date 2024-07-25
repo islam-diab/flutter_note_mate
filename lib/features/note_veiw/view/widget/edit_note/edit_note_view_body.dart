@@ -4,8 +4,8 @@ import 'package:flutter_note_mate/core/helpre/extensions.dart';
 import 'package:flutter_note_mate/core/helpre/spase.dart';
 import 'package:flutter_note_mate/core/theming/text_styles.dart';
 import 'package:flutter_note_mate/core/widget/auth/text_form_field.dart';
-import 'package:flutter_note_mate/features/note_veiw/cubit/notes_cubit.dart';
-import 'package:flutter_note_mate/features/note_veiw/models/note_model.dart';
+import 'package:flutter_note_mate/features/note_veiw/logic/notes_cubit.dart';
+import 'package:flutter_note_mate/features/note_veiw/data/models/note_model.dart';
 import 'package:flutter_note_mate/features/note_veiw/view/widget/note_view/custom_app_bar.dart';
 
 class EditNoteViewBody extends StatelessWidget {

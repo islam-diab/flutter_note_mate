@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_note_mate/core/helpre/extensions.dart';
 import 'package:flutter_note_mate/core/routing/routes.dart';
-import 'package:flutter_note_mate/features/note_veiw/cubit/notes_cubit.dart';
+import 'package:flutter_note_mate/features/auth/signup/data/api/cloud_firestore_api.dart';
+import 'package:flutter_note_mate/features/note_veiw/data/repo/note_repo.dart';
+import 'package:flutter_note_mate/features/note_veiw/logic/notes_cubit.dart';
 
 import 'add_note_form.dart';
 
@@ -12,7 +14,9 @@ class AddNoteBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NotesCubit(),
+      create: (context) => NotesCubit(
+        NoteRepo(cloudFirestoreApi: CloudFirestoreApi()),
+      ),
       child: BlocConsumer<NotesCubit, NotesState>(
         listener: (context, state) {
           if (state is AddNoteSuccess) {
