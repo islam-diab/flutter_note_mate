@@ -1,4 +1,3 @@
-
 import 'package:hive/hive.dart';
 
 part 'note_model.g.dart';
@@ -20,4 +19,19 @@ class NoteModel extends HiveObject {
     required this.date,
     required this.color,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'content': content,
+      'date': date,
+      'color': color,
+    };
+  }
+
+  NoteModel.fromJson(Map<String, dynamic> json)
+      : title = json['title'],
+        content = json['content'],
+        date = json['date'],
+        color = json['color'];
 }

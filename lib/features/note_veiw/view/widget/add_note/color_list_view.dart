@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_note_mate/features/note_veiw/cubit/notes_cubit.dart';
+import 'package:flutter_note_mate/features/note_veiw/logic/notes_cubit.dart';
 
 class ColorItem extends StatelessWidget {
   const ColorItem({super.key, required this.isActive, required this.color});

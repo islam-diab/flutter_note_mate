@@ -1,5 +1,7 @@
-class AppConstant {
+class FirebaseConstant {
   static const String usersCollection = 'users';
+
+  static const String notesCollection = 'notes';
 }
 
 class HiveConstant {

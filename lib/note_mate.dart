@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_note_mate/core/routing/app_router.dart';
 import 'package:flutter_note_mate/core/routing/routes.dart';
-import 'package:flutter_note_mate/features/note_veiw/cubit/notes_cubit.dart';
+import 'package:flutter_note_mate/features/auth/signup/data/api/cloud_firestore_api.dart';
+import 'package:flutter_note_mate/features/note_veiw/data/repo/note_repo.dart';
+import 'package:flutter_note_mate/features/note_veiw/logic/notes_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NoteMate extends StatelessWidget {
@@ -13,7 +15,8 @@ class NoteMate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NotesCubit(),
+      create: (context) =>
+          NotesCubit(NoteRepo(cloudFirestoreApi: CloudFirestoreApi())),
       child: ScreenUtilInit(
         designSize: const Size(414, 896),
         child: MaterialApp(
