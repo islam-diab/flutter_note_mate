@@ -61,7 +61,7 @@ class UserAndPassword extends StatelessWidget {
             },
             child: Text(
               'Forgot Password !',
-              style: AppTextStyles.font14Medium,
+              style: AppTextStyles.font16Medium,
             ),
           ),
         ),

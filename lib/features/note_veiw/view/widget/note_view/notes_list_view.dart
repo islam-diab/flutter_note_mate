@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_note_mate/core/helpre/assests.dart';
 import 'package:flutter_note_mate/features/note_veiw/logic/notes_cubit.dart';
 import 'package:flutter_note_mate/features/note_veiw/view/widget/note_view/note_empty.dart';
 import 'package:flutter_note_mate/features/note_veiw/view/widget/note_view/notes_item.dart';
@@ -17,7 +18,10 @@ class NotesListView extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: notes.isEmpty
-              ? const NoteEmpty()
+              ? const NoteEmpty(
+                text:  'Welcome to Note Mate!',
+                image: AppAssests.homeVictor,
+              )
               : ListView.builder(
                   itemCount: notes.length,
                   padding: EdgeInsets.zero,

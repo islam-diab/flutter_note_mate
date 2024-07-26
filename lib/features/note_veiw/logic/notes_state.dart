@@ -15,3 +15,13 @@ class NotesError extends NotesState {
   final String error;
   NotesError({required this.error});
 }
+
+// Search Notes
+class SearchNotesSucces extends NotesState {
+  final List<NoteModel> results;
+  SearchNotesSucces({required this.results});
+}
+
+class SearchNotesEmpty extends NotesState {}
+
+class SearchNotesFailure extends NotesState {}

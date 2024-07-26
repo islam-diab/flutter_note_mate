@@ -31,12 +31,11 @@ class EditNoteViewBody extends StatelessWidget {
               suffixIcon: Icons.check,
               onPressedInSuffixIcon: () {
                 context.read<NotesCubit>().editNote(note);
-                Navigator.pop(context);
+                context.pop();
               },
             ),
             verticalSpace(50),
             AppTextFormField(
-              
               controller: context.read<NotesCubit>().titleController,
               textInputAction: TextInputAction.newline,
             ),

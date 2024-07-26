@@ -5,6 +5,8 @@ import 'package:flutter_note_mate/core/theming/text_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
   final Function()? onTap;
+  final Function(String)? onChanged;
+  final Function(String)? onFieldSubmitted;
   final String? hintText;
   final int? maxLine;
   final bool readOnly;
@@ -31,6 +33,8 @@ class AppTextFormField extends StatelessWidget {
     this.keyboardType,
     required this.textInputAction,
     this.maxLine = 1,
+    this.onChanged,
+    this.onFieldSubmitted,
   });
 
   @override
@@ -41,6 +45,8 @@ class AppTextFormField extends StatelessWidget {
         children: [
           TextFormField(
             onTap: onTap,
+            onChanged: onChanged,
+            onFieldSubmitted: onFieldSubmitted,
             maxLines: maxLine,
             readOnly: readOnly,
             validator: (value) {
@@ -58,7 +64,7 @@ class AppTextFormField extends StatelessWidget {
               fillColor: Colors.grey.withOpacity(0.1),
               filled: true,
               isDense: true,
-              hintStyle: AppTextStyles.font14Medium,
+              hintStyle: AppTextStyles.font16Medium,
               hintText: hintText,
               prefixIcon: prefixIcon,
               suffixIcon: suffixIcon,

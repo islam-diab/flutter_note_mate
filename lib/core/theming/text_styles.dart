@@ -22,6 +22,12 @@ class AppTextStyles {
     color: Colors.white,
   );
 
+   static TextStyle font20LightRed = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeightHelper.light,
+    color: Colors.red,
+  );
+
   static TextStyle font25RegularWhite = TextStyle(
     fontSize: 25.sp,
     fontWeight: FontWeightHelper.regular,
@@ -40,8 +46,8 @@ class AppTextStyles {
     fontWeight: FontWeightHelper.regular,
   );
 
-  static TextStyle font14Medium = TextStyle(
-    fontSize: 14.sp,
+  static TextStyle font16Medium = TextStyle(
+    fontSize: 16.sp,
     color: Colors.grey.shade500,
     fontWeight: FontWeightHelper.medium,
   );
@@ -64,7 +70,7 @@ class AppTextStyles {
     fontWeight: FontWeightHelper.medium,
   );
 
-    static TextStyle font35RegularWhite = TextStyle(
+  static TextStyle font35RegularWhite = TextStyle(
     fontSize: 35.sp,
     color: Colors.white,
     fontWeight: FontWeightHelper.regular,

@@ -7,14 +7,14 @@ class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
     super.key,
     required this.title,
-    required this.suffixIcon,
-    required this.onPressedInSuffixIcon,
-    required this.perfixIcon,
-    required this.onPressedInPerfixIcon,
+    this.suffixIcon,
+    this.onPressedInSuffixIcon,
+    this.perfixIcon,
+    this.onPressedInPerfixIcon,
   });
-  final IconData suffixIcon;
+  final IconData? suffixIcon;
   final void Function()? onPressedInSuffixIcon;
-  final IconData perfixIcon;
+  final IconData? perfixIcon;
   final void Function()? onPressedInPerfixIcon;
   final String title;
 
@@ -34,10 +34,12 @@ class CustomAppBar extends StatelessWidget {
             style: AppTextStyles.font40SemiBoldWhite,
           ),
           const Expanded(child: SizedBox.shrink()),
-          CustomIcon(
-            onPressed: onPressedInSuffixIcon,
-            icon: suffixIcon,
-          ),
+          suffixIcon != null
+              ? CustomIcon(
+                  onPressed: onPressedInSuffixIcon,
+                  icon: suffixIcon,
+                )
+              : const SizedBox.shrink(),
         ],
       ),
     );

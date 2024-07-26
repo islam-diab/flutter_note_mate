@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../logic/notes_cubit.dart';
+import '../search_note/search_view.dart';
 import 'custom_app_bar.dart';
 import 'notes_list_view.dart';
 
@@ -30,7 +31,11 @@ class _NotesViewBodyState extends State<NotesViewBody> {
             perfixIcon: Icons.menu,
             onPressedInPerfixIcon: () {},
             suffixIcon: Icons.search,
-            onPressedInSuffixIcon: () {},
+            onPressedInSuffixIcon: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const SearchView();
+              }));
+            },
           ),
           const Expanded(
             child: NotesListView(),
