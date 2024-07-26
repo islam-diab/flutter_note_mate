@@ -60,4 +60,17 @@ class CloudFirestoreApi {
       return ResultApi(isError: true, value: e.toString());
     }
   }
+
+  Future<ResultApi> updateDataInFirestore({
+    required String collectionName,
+    required String documentId,
+    required Map<String, dynamic> data,
+  }) async {
+    try {
+      await _firestore.collection(collectionName).doc(documentId).update(data);
+      return ResultApi(isError: false, value: 'Data updated successfully');
+    } catch (e) {
+      return ResultApi(isError: true, value: e.toString());
+    }
+  }
 }

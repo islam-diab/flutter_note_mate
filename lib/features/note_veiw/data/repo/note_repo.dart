@@ -55,4 +55,24 @@ class NoteRepo {
       return ResultApi(value: 'No internet', isError: true);
     }
   }
+
+  Future<ResultApi> updateNote({
+    required NoteModel note,
+    required String documentId,
+  }) async {
+    if (await isConnectedNetwork()) {
+      try {
+        ResultApi result = await cloudFirestoreApi.updateDataInFirestore(
+          collectionName: FirebaseConstant.notesCollection,
+          documentId: documentId,
+          data: note.toJson(),
+        );
+        return ResultApi(value: result.value, isError: false);
+      } catch (e) {
+        return ResultApi(isError: true, value: e.toString());
+      }
+    } else {
+      return ResultApi(value: 'No internet', isError: true);
+    }
+  }
 }
