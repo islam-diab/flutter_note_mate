@@ -71,6 +71,7 @@ class NotesCubit extends Cubit<NotesState> {
     try {
       note.title = titleController.text;
       note.content = contentController.text;
+      noteRepo.updateNote(note: note, documentId: note.noteId);
       note.save();
       emit(AddNoteSuccess());
     } catch (e) {
