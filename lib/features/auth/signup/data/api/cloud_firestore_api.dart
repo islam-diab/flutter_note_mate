@@ -48,4 +48,16 @@ class CloudFirestoreApi {
       throw Exception(e.toString());
     }
   }
+
+  Future<ResultApi> deleteNotsInFirestore({
+    required String collectionName,
+    required String documentId,
+  }) async {
+    try {
+      await _firestore.collection(collectionName).doc(documentId).delete();
+      return ResultApi(isError: false, value: 'Note deleted successfully');
+    } catch (e) {
+      return ResultApi(isError: true, value: e.toString());
+    }
+  }
 }

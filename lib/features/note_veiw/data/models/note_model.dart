@@ -12,12 +12,15 @@ class NoteModel extends HiveObject {
   final String date;
   @HiveField(3)
   int color;
+  @HiveField(4)
+  String noteId;
 
   NoteModel({
     required this.title,
     required this.content,
     required this.date,
     required this.color,
+    required this.noteId,
   });
 
   Map<String, dynamic> toJson() {
@@ -26,6 +29,7 @@ class NoteModel extends HiveObject {
       'content': content,
       'date': date,
       'color': color,
+      'noteId': noteId
     };
   }
 
@@ -33,5 +37,6 @@ class NoteModel extends HiveObject {
       : title = json['title'],
         content = json['content'],
         date = json['date'],
-        color = json['color'];
+        color = json['color'],
+        noteId = json['noteId'];
 }

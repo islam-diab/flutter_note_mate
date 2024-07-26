@@ -106,9 +106,8 @@ class NotesItem extends StatelessWidget {
                 children: [
                   AppTextButtonToDialog(
                     onPressed: () {
-                      notes.delete();
+                      context.read<NotesCubit>().deleteNote(notes);
                       context.pop();
-                      context.read<NotesCubit>().fetchAllNotes();
                     },
                     notes: notes,
                     text: 'Delete',
