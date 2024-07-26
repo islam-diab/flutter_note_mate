@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_note_mate/core/helpre/app_constant.dart';
@@ -15,9 +17,11 @@ class NotesCubit extends Cubit<NotesState> {
   Color color = const Color(0xffFD99FF);
   final TextEditingController titleController = TextEditingController();
   final TextEditingController contentController = TextEditingController();
+  final TextEditingController searchController = TextEditingController();
   final GlobalKey<FormState> formKey = GlobalKey();
 
   List<NoteModel>? notes;
+  final List<NoteModel> results = [];
 
   final NoteRepo noteRepo;
 
@@ -87,6 +91,28 @@ class NotesCubit extends Cubit<NotesState> {
       emit(AddNoteSuccess());
     } catch (e) {
       emit(NotesError(error: e.toString()));
+    }
+  }
+
+  void searchNotesByTitle(String query) async {
+    List<NoteModel> hiveNotes = [];
+    results.clear();
+    // Search in Hive
+    if (searchController.text.isEmpty) {
+      emit(SearchNotesEmpty());
+    } else {
+      var noteBox = await Hive.openBox<NoteModel>(HiveConstant.noteBox);
+      hiveNotes = noteBox.values
+          .where(
+              (note) => note.title.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+      results.addAll(hiveNotes);
+
+      if (results.isEmpty) {
+        emit(SearchNotesFailure());
+      } else {
+        emit(SearchNotesSucces(results: results));
+      }
     }
   }
 }

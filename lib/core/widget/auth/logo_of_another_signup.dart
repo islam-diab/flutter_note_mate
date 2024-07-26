@@ -31,7 +31,7 @@ class LogoOfAnotherSignUp extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Text(
                 'Or continue with',
-                style: AppTextStyles.font14Medium,
+                style: AppTextStyles.font16Medium,
               ),
             ),
             Expanded(
@@ -63,13 +63,13 @@ class LogoOfAnotherSignUp extends StatelessWidget {
           children: [
             Text(
               title,
-              style: AppTextStyles.font14Medium,
+              style: AppTextStyles.font16Medium,
             ),
             TextButton(
               onPressed: onPressed,
               child: Text(
                 text,
-                style: AppTextStyles.font14Medium
+                style: AppTextStyles.font16Medium
                     .copyWith(color: const Color(0xffB14A96)),
               ),
             ),

@@ -52,7 +52,7 @@ class LoginListener extends StatelessWidget {
                     },
                     child: Text(
                       'Got it',
-                      style: AppTextStyles.font14Medium,
+                      style: AppTextStyles.font16Medium,
                     ),
                   ),
                 ],

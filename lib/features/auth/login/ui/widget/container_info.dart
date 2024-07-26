@@ -23,7 +23,7 @@ class ContainerInfo extends StatelessWidget {
           ),
           Text(
             'welcome back we missed you',
-            style: AppTextStyles.font14Medium,
+            style: AppTextStyles.font16Medium,
           ),
           verticalSpace(20.h),
           const UserAndPassword(),

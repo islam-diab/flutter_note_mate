@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_note_mate/core/helpre/assests.dart';
 import 'package:flutter_note_mate/core/theming/text_styles.dart';
 
 class NoteEmpty extends StatelessWidget {
-  const NoteEmpty({super.key});
+  const NoteEmpty(
+      {super.key, required this.text, required this.image, this.style});
+  final String text, image;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +14,12 @@ class NoteEmpty extends StatelessWidget {
         const Expanded(child: SizedBox.shrink()),
         SizedBox(
           width: 350,
-          height: 286.73,
-          child: Image.asset(AppAssests.homeVictor),
+          height: 270.73,
+          child: Image.asset(image),
         ),
         Text(
-          'Welcome to Note Mate!',
-          style: AppTextStyles.font20LightWhite,
+          text,
+          style: style ?? AppTextStyles.font20LightWhite,
         ),
         const Expanded(child: SizedBox.shrink()),
       ],
