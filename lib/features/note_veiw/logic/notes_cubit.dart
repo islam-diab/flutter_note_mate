@@ -28,28 +28,34 @@ class NotesCubit extends Cubit<NotesState> {
     emit(NotesSucces());
   }
 
-  addNote() async {
+  void addNote() async {
     emit(NotesLoading());
     try {
       DateTime currentDate = DateTime.now();
       String formatCurrentDate = DateFormat.yMd().format(currentDate);
+      var appUser = Hive.box<AppUser>(HiveConstant.userBox);
+      AppUser user = appUser.get(HiveConstant.currentUser)!;
+      String noteId = user.uid + currentDate.toString();
+
       var note = NoteModel(
         title: titleController.text,
         content: contentController.text,
         date: formatCurrentDate,
         color: Colors.tealAccent.value,
+        noteId: noteId,
       );
+
       note.color = color.value;
       var noteBox = Hive.box<NoteModel>(HiveConstant.noteBox);
       await noteBox.add(note);
-      var appUser = Hive.box<AppUser>(HiveConstant.userBox);
-      AppUser user = appUser.get(HiveConstant.currentUser)!;
+
       noteRepo.addNote(
-        documentId: user.uid + currentDate.toString(),
+        documentId: noteId,
         title: titleController.text,
         content: contentController.text,
         data: formatCurrentDate,
         color: color.value,
+        noteId: noteId,
       );
       titleController.clear();
       contentController.clear();
@@ -60,12 +66,23 @@ class NotesCubit extends Cubit<NotesState> {
     }
   }
 
-  editNote(NoteModel note) async {
+  void editNote(NoteModel note) async {
     emit(NotesLoading());
     try {
       note.title = titleController.text;
       note.content = contentController.text;
       note.save();
+      emit(AddNoteSuccess());
+    } catch (e) {
+      emit(NotesError(error: e.toString()));
+    }
+  }
+
+  void deleteNote(NoteModel note) async {
+    emit(NotesLoading());
+    try {
+      note.delete();
+      noteRepo.deleteNotsInFirestore(documentId: note.noteId);
       emit(AddNoteSuccess());
     } catch (e) {
       emit(NotesError(error: e.toString()));

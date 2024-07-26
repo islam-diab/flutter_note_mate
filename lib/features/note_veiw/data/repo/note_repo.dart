@@ -15,6 +15,7 @@ class NoteRepo {
     required String data,
     required String documentId,
     required int color,
+    required String noteId,
   }) async {
     if (await isConnectedNetwork()) {
       try {
@@ -23,6 +24,7 @@ class NoteRepo {
           content: content,
           color: color,
           date: data,
+          noteId: noteId,
         );
 
         ResultApi result = await cloudFirestoreApi.setDataInFirestore(
@@ -36,5 +38,21 @@ class NoteRepo {
       }
     }
     return ResultApi(value: 'No internet', isError: true);
+  }
+
+  Future<ResultApi> deleteNotsInFirestore({required String documentId}) async {
+    if (await isConnectedNetwork()) {
+      try {
+        ResultApi result = await cloudFirestoreApi.deleteNotsInFirestore(
+          collectionName: FirebaseConstant.notesCollection,
+          documentId: documentId,
+        );
+        return ResultApi(value: result.value, isError: false);
+      } catch (e) {
+        return ResultApi(isError: true, value: e.toString());
+      }
+    } else {
+      return ResultApi(value: 'No internet', isError: true);
+    }
   }
 }
