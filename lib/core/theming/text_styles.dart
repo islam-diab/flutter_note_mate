@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'font_weight_helper.dart';
 
 class AppTextStyles {
-  static TextStyle font40SemiBoldWhite = TextStyle(
-    fontSize: 40.sp,
+  static TextStyle font40SemiBoldWhite = const TextStyle(
+    fontSize: 40,
     fontWeight: FontWeightHelper.semiBold,
     color: Colors.white,
   );
@@ -22,7 +22,7 @@ class AppTextStyles {
     color: Colors.white,
   );
 
-   static TextStyle font20LightRed = TextStyle(
+  static TextStyle font20LightRed = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeightHelper.light,
     color: Colors.red,
@@ -52,10 +52,13 @@ class AppTextStyles {
     fontWeight: FontWeightHelper.medium,
   );
 
-  static TextStyle font18MediumWihte = TextStyle(
+  static TextStyle font18Mediumyellow = TextStyle(
     fontSize: 18.sp,
-    color: Colors.white,
-    fontWeight: FontWeightHelper.medium,
+    decoration: TextDecoration.underline,
+    decorationColor: Colors.yellow,
+    decorationThickness: 2,
+    color: Colors.yellow,
+    fontWeight: FontWeightHelper.extraBold,
   );
 
   static TextStyle font20MediumWhite = TextStyle(

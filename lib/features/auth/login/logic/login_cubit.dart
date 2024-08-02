@@ -21,8 +21,8 @@ class LoginCubit extends Cubit<LoginState> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   Future<ResultApi> login() async {
-    emit(const LoginState.loading());
     try {
+      emit(const LoginState.loading());
       ResultApi resultApi = await _loginRepo.login(
         emailController.text.trim(),
         passwordController.text.trim(),
@@ -47,7 +47,7 @@ class LoginCubit extends Cubit<LoginState> {
         for (var note in notes) {
           await noteBox.add(note);
         }
-      } else {}
+      } 
       emit(const LoginState.succes());
       return ResultApi(value: resultApi, isError: false);
     } catch (e) {

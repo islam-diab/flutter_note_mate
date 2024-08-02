@@ -1,6 +1,3 @@
-// * how to route defferent pages*
-// *
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_note_mate/core/routing/routes.dart';
@@ -16,6 +13,8 @@ import 'package:flutter_note_mate/features/auth/signup/logic/signup_cubit.dart';
 import 'package:flutter_note_mate/features/auth/signup/data/repo/signup_repo.dart';
 import 'package:flutter_note_mate/features/auth/signup/ui/signup_view.dart';
 import 'package:flutter_note_mate/features/note_veiw/view/notes_view.dart';
+import 'package:flutter_note_mate/features/pin_code/logic/pin_code_cubit.dart';
+import 'package:flutter_note_mate/features/pin_code/ui/pin_code.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -52,6 +51,13 @@ class AppRouter {
       case Routes.homeScreen:
         return MaterialPageRoute(
           builder: (_) => const NotesView(),
+        );
+      case Routes.pinCode:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => PinCodeCubit(),
+            child: const PinCode(),
+          ),
         );
       default:
         return null;

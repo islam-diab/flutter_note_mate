@@ -24,6 +24,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   # Pin code input (OTP) text field
   pinput: ^5.0.0
+  local_auth: ^2.2.0
 
   flutter_svg: ^2.0.10+1
   flutter_bloc: ^8.1.6
@@ -40,9 +41,6 @@ dependencies:
   connectivity_plus: ^6.0.3
 
   intl: ^0.19.0
-
-  star_menu: ^4.0.1
-
 
 dev_dependencies:
   flutter_test:
@@ -62,14 +60,14 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
+  uses-material-design: true  
 
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/splash/splash.png
     - assets/splash/splash_dark.png
     - assets/auth/image/
-    - assets/image/home/
+    - assets/image/
  
 
   # An image asset can refer to one or more resolution-specific "variants", see
