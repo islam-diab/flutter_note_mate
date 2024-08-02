@@ -8,15 +8,18 @@ class PinCodeCubit extends Cubit<PinCodeState> {
   PinCodeCubit() : super(PinCodeInitial());
   final LocalAuthentication auth = LocalAuthentication();
   Future<void> fingerprint() async {
+    bool isAuth = false;
     try {
-      await auth.authenticate(
+      isAuth = await auth.authenticate(
         localizedReason: 'Scan your fingerprint or face to authenticate',
         options: const AuthenticationOptions(
           stickyAuth: true,
           biometricOnly: true,
         ),
       );
-      emit(PinCodeSucces());
+      if (isAuth) {
+        emit(PinCodeSucces());
+      } 
     } catch (e) {
       emit(PinCodeError(e.toString()));
       debugPrint(e.toString());
