@@ -28,7 +28,7 @@ class LoginListener extends StatelessWidget {
           },
           succes: () {
             context.pop();
-            context.pushNamed(Routes.homeScreen);
+            context.pushNamed(Routes.pinCode);
           },
           error: (error) {
             context.pop();

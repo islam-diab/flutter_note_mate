@@ -9,4 +9,5 @@ class AppAssests {
   static const String signupAvatar = 'assets/auth/image/signup_avatar.png';
   static const String homeVictor = 'assets/image/home/victor.png';
   static const String searchAvatar = 'assets/image/home/search.png';
+  static const String fingerprint = 'assets/image/passwordSVG.svg';
 }
