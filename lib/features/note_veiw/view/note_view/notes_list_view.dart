@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_note_mate/core/helpre/assests.dart';
 import 'package:flutter_note_mate/features/note_veiw/logic/notes_cubit.dart';
-import 'package:flutter_note_mate/features/note_veiw/view/widget/note_view/note_empty.dart';
-import 'package:flutter_note_mate/features/note_veiw/view/widget/note_view/notes_item.dart';
+import 'package:flutter_note_mate/features/note_veiw/view/note_view/note_empty.dart';
+import 'package:flutter_note_mate/features/note_veiw/view/note_view/notes_item.dart';
 
-import '../../../data/models/note_model.dart';
+import '../../data/models/note_model.dart';
 
 class NotesListView extends StatelessWidget {
   const NotesListView({super.key});

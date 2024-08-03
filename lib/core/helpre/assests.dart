@@ -7,7 +7,9 @@ class AppAssests {
   static const String apple = 'assets/auth/image/apple.png';
   static const String facebook = 'assets/auth/image/facebook.png';
   static const String signupAvatar = 'assets/auth/image/signup_avatar.png';
-  static const String homeVictor = 'assets/image/home/victor.png';
-  static const String searchAvatar = 'assets/image/home/search.png';
-  static const String fingerprint = 'assets/image/passwordSVG.svg';
+  static const String homeVictor = 'assets/image/home/home.svg';
+  static const String search = 'assets/image/home/search.svg';
+  static const String searchEmpty = 'assets/image/home/search_empty.svg';
+
+  static const String pinCode = 'assets/image/passwordSVG.svg';
 }

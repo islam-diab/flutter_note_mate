@@ -67,6 +67,7 @@ flutter:
     - assets/splash/splash.png
     - assets/splash/splash_dark.png
     - assets/auth/image/
+    - assets/image/home/
     - assets/image/
  
 

@@ -87,6 +87,7 @@ class NotesCubit extends Cubit<NotesState> {
     try {
       note.delete();
       noteRepo.deleteNotsInFirestore(documentId: note.noteId);
+      fetchAllNotes();
       emit(AddNoteSuccess());
     } catch (e) {
       emit(NotesError(error: e.toString()));

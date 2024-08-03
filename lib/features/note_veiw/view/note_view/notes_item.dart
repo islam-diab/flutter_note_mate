@@ -5,7 +5,7 @@ import 'package:flutter_note_mate/core/theming/app_color.dart';
 import 'package:flutter_note_mate/core/theming/text_styles.dart';
 import 'package:flutter_note_mate/features/note_veiw/logic/notes_cubit.dart';
 import 'package:flutter_note_mate/features/note_veiw/data/models/note_model.dart';
-import 'package:flutter_note_mate/features/note_veiw/view/widget/edit_note/edit_note.dart';
+import 'package:flutter_note_mate/features/note_veiw/view/edit_note/edit_note.dart';
 part 'app_text_button_to_dialog.dart';
 
 class NotesItem extends StatelessWidget {
