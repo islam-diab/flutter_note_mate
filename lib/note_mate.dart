@@ -20,6 +20,7 @@ class NoteMate extends StatelessWidget {
       child: ScreenUtilInit(
         designSize: const Size(414, 896),
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             fontFamily: 'Nunito',
             useMaterial3: true,
