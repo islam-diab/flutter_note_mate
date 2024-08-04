@@ -30,7 +30,7 @@ class PinCode extends StatelessWidget {
                 SizedBox(
                   height: 250,
                   child: SvgPicture.asset(
-                    AppAssests.fingerprint,
+                    AppAssests.pinCode,
                   ),
                 ),
                 Padding(

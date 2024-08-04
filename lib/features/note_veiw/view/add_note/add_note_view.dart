@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_note_mate/core/theming/app_color.dart';
-import 'package:flutter_note_mate/features/note_veiw/view/widget/add_note/custom_bottom_sheet.dart';
+import 'package:flutter_note_mate/features/note_veiw/view/add_note/custom_bottom_sheet.dart';
 
 class AddNoteView extends StatelessWidget {
   const AddNoteView({super.key});

@@ -20,6 +20,7 @@ class NoteMate extends StatelessWidget {
       child: ScreenUtilInit(
         designSize: const Size(414, 896),
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: ThemeData(
             fontFamily: 'Nunito',
             useMaterial3: true,
@@ -52,7 +53,7 @@ Future<String> _checkIfUserIsLoggedIn() async {
   User? user = auth.currentUser;
   if (user != null) {
     // User is signed in
-    return Routes.pinCode;
+    return Routes.homeScreen;
   } else {
     // No user is signed in
     return Routes.loginScreen;

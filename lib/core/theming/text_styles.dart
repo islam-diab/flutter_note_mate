@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_note_mate/core/theming/app_color.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'font_weight_helper.dart';
@@ -17,9 +18,9 @@ class AppTextStyles {
   );
 
   static TextStyle font20LightWhite = TextStyle(
-    fontSize: 20.sp,
-    fontWeight: FontWeightHelper.light,
-    color: Colors.white,
+    fontSize: 28.sp,
+    fontWeight: FontWeightHelper.extraBold,
+    color: AppColor.secondaryColor,
   );
 
   static TextStyle font20LightRed = TextStyle(
