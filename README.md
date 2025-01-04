@@ -1,6 +1,7 @@
 # flutter_note_mate
 
 A new Flutter project.
+test
 
 ## Getting Started
 
